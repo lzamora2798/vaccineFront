@@ -1,12 +1,15 @@
 
 import { useState } from 'react';
 import ModalInfo from './Modal';
+import ModalS from './InfoModal';
 function Formulario() {
 
     const[cedula,setCedula] = useState('');
     const [modal, setModal] = useState(false);
+    const [modal2, setModal2] = useState(false);
     const [data, setData] = useState('');
     const toggle = () => setModal(!modal);
+    const toggle2 = () => setModal2(!modal2);
     const onSubmit = async e => {
         e.preventDefault();
         const respuesta = await fetch(`http://localhost:8000/person/id/${cedula}`, { 
@@ -16,9 +19,15 @@ function Formulario() {
             return response.json() 
         })
         .catch(error => console.log(error));
-        toggle();
-        setData(respuesta[0]);
-        console.log(respuesta);
+        console.log(respuesta)
+        if (respuesta.length >0 ){
+            toggle();
+            setData(respuesta[0]);
+            console.log(respuesta);
+        }else{
+            toggle2();
+        }
+        
         
     }
     return (
@@ -42,6 +51,10 @@ function Formulario() {
                         fecha = {data.fecha_vac}
 
             ></ModalInfo>
+            <ModalS  toggle={toggle2} 
+                        modal={modal2} 
+                       
+            ></ModalS>
       </div>
   );
 }
