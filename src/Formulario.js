@@ -1,8 +1,15 @@
 
 import { useState } from 'react';
+import { useEffect } from 'react';
 import ModalInfo from './Modal';
 import ModalS from './InfoModal';
+const {REACT_APP_URL_API} = process.env;
+
 function Formulario() {
+
+    useEffect(()=>{
+        console.log(REACT_APP_URL_API)
+    })
 
     const[cedula,setCedula] = useState('');
     const [modal, setModal] = useState(false);
@@ -12,7 +19,7 @@ function Formulario() {
     const toggle2 = () => setModal2(!modal2);
     const onSubmit = async e => {
         e.preventDefault();
-        const respuesta = await fetch(`http://localhost:8000/person/id/${cedula}`, { 
+        const respuesta = await fetch(`${REACT_APP_URL_API}/person/id/${cedula}`, { 
             method: 'GET'}
         )
         .then(response => { 
