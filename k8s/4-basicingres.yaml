@@ -1,0 +1,9 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: basic-ingress
+  namespace: vaccinefront
+spec:
+  backend:
+    serviceName: node-app-srv
+    servicePort: 5000
