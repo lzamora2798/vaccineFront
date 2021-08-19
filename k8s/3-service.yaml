@@ -9,5 +9,5 @@ spec:
     protocol: TCP
     targetPort: 5000
   selector:
-    app: dpt-vaccine-front
+    app: vaccine-front-app
   type: NodePort
