@@ -9,7 +9,7 @@ function App() {
       <img src="main.png" width='500px' height='100px' alt='logo' ></img>
       <h2>CONSULTA TU CENTRO DE VACUNACION</h2>
       <Formulario></Formulario>
-
+      <span>Esto no es informacion oficial, es solo un proyecto</span>
     </div>
   );
 }

@@ -41,7 +41,7 @@ function Formulario() {
     <div className="Form">
       <form onSubmit={onSubmit}>
                 <input
-                    placeholder="Ingrese nombre de usuario"
+                    placeholder="Ingrese numero de cedula"
                     className="form-control mb-2"
                     name="usuario"
                     onChange={e => setCedula(e.target.value)}
@@ -49,6 +49,7 @@ function Formulario() {
                 <button type="submit" className="btn btn-primary">
                     Enviar
                 </button>
+                
             </form>
             <ModalInfo  toggle={toggle} 
                         modal={modal} 
