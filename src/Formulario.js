@@ -19,7 +19,7 @@ function Formulario() {
     const toggle2 = () => setModal2(!modal2);
     const onSubmit = async e => {
         e.preventDefault();
-        const respuesta = await fetch(`${REACT_APP_URL_API}/person/id/${cedula}`, { 
+        const respuesta = await fetch(`${REACT_APP_URL_API}/id/${cedula}`, { 
             method: 'GET'}
         )
         .then(response => { 
